@@ -17,7 +17,7 @@ class AbstractCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calculatorLogic.parentVC = self
+        calculatorLogic.delegate = self
     }
     
     // MARK: - IBActions
@@ -56,3 +56,24 @@ class AbstractCalculatorViewController: UIViewController {
         calculatorLogic.executeClear()
     }
 }
+
+extension AbstractCalculatorViewController: CalculatorLogicDelegate {
+    func didChangeSelectedBinaryOperand(_ oldValue: BinaryOperand?, newValue: BinaryOperand?) {
+        if let oldValue = oldValue {
+            if let button = view.viewWithTag(oldValue.rawValue) as? UIButton {
+                button.isSelected = false
+            }
+        }
+        
+        if let newValue = newValue {
+            if let button = view.viewWithTag(newValue.rawValue) as? UIButton {
+                button.isSelected = true
+            }
+        }
+    }
+    
+    func didUpdateDisplayText(_ text: String) {
+        displayLabel.text = text
+    }
+}
+

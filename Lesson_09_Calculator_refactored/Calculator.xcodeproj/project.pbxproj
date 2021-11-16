@@ -11,6 +11,7 @@
 		D2459EBC273FA9A500546CC8 /* ManualLayoutCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2459EBB273FA9A500546CC8 /* ManualLayoutCalculatorViewController.swift */; };
 		D2459EBE273FAEAC00546CC8 /* DigitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2459EBD273FAEAC00546CC8 /* DigitButton.swift */; };
 		D2459EC0273FB23100546CC8 /* AbstractCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2459EBF273FB23100546CC8 /* AbstractCalculatorViewController.swift */; };
+		D2459EE627443E2400546CC8 /* UnaryOperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2459EE527443E2400546CC8 /* UnaryOperatorButton.swift */; };
 		D283CAFC27319DAD00EFB4ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283CAFB27319DAD00EFB4ED /* AppDelegate.swift */; };
 		D283CAFE27319DAD00EFB4ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283CAFD27319DAD00EFB4ED /* SceneDelegate.swift */; };
 		D283CB0027319DAD00EFB4ED /* StoryboardedCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283CAFF27319DAD00EFB4ED /* StoryboardedCalculatorViewController.swift */; };
@@ -26,6 +27,7 @@
 		D2459EBB273FA9A500546CC8 /* ManualLayoutCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLayoutCalculatorViewController.swift; sourceTree = "<group>"; };
 		D2459EBD273FAEAC00546CC8 /* DigitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitButton.swift; sourceTree = "<group>"; };
 		D2459EBF273FB23100546CC8 /* AbstractCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCalculatorViewController.swift; sourceTree = "<group>"; };
+		D2459EE527443E2400546CC8 /* UnaryOperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaryOperatorButton.swift; sourceTree = "<group>"; };
 		D283CAF827319DAD00EFB4ED /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D283CAFB27319DAD00EFB4ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D283CAFD27319DAD00EFB4ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				D283CB12273662B900EFB4ED /* RoundedButton.swift */,
 				D2459EBD273FAEAC00546CC8 /* DigitButton.swift */,
 				D283CB16273669AF00EFB4ED /* BinaryOperatorButton.swift */,
+				D2459EE527443E2400546CC8 /* UnaryOperatorButton.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D283CB17273669AF00EFB4ED /* BinaryOperatorButton.swift in Sources */,
+				D2459EE627443E2400546CC8 /* UnaryOperatorButton.swift in Sources */,
 				D2459EBE273FAEAC00546CC8 /* DigitButton.swift in Sources */,
 				D283CB0027319DAD00EFB4ED /* StoryboardedCalculatorViewController.swift in Sources */,
 				D2459EBC273FA9A500546CC8 /* ManualLayoutCalculatorViewController.swift in Sources */,

@@ -19,11 +19,16 @@ enum UnaryOperand: Int {
     case invert = 202
 }
 
+protocol CalculatorLogicDelegate: AnyObject {
+    func didUpdateDisplayText(_ text: String)
+    func didChangeSelectedBinaryOperand(_ oldValue: BinaryOperand?, newValue: BinaryOperand?)
+}
+
 class CalculatorLogic {
     
-    weak var parentVC: AbstractCalculatorViewController? {
+    weak var delegate: CalculatorLogicDelegate? {
         didSet {
-            parentVC?.displayLabel.text = displayText
+            delegate?.didUpdateDisplayText(displayText)
         }
     }
     
@@ -33,13 +38,17 @@ class CalculatorLogic {
     
     var displayText: String = CalculatorLogic.initialValueString {
         didSet {
-            parentVC?.displayLabel.text = displayText
+            delegate?.didUpdateDisplayText(displayText)
         }
     }
     
     var value1: Double = 0
     var value2: Double?
-    var selectedBinaryOperand: BinaryOperand?
+    var selectedBinaryOperand: BinaryOperand? {
+        didSet {
+            delegate?.didChangeSelectedBinaryOperand(oldValue, newValue: selectedBinaryOperand)
+        }
+    }
     
     var needToRestartTextLabel = false
     

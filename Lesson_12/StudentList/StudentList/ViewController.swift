@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.keyboardDismissMode = .onDrag
-        resetDataSource()
+        filterText = nil
     }
     
     // MARK: - Functions

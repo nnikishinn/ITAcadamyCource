@@ -21,7 +21,8 @@ class StudentViewController: UIViewController {
     var shouldAddSearchBar = false
 
     weak var delegate: StudentViewControllerDelegate?
-    
+    var didSelectStudentClosure: ((String, Int, UIViewController) -> ())?
+
     var women: [String] = []
     var men: [String] = []
     
@@ -153,7 +154,11 @@ class StudentViewController: UIViewController {
         vc.men = DataSource.menArray
         vc.women = DataSource.womenArray
         
-        vc.delegate = self
+       // vc.delegate = self
+        
+        vc.didSelectStudentClosure = { [weak self] student, gender, sender in
+            self?.didSelectStudent(student, gender: gender, sender: sender)
+        }
         
         present(vc, animated: true)
     }
@@ -197,7 +202,9 @@ extension StudentViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectStudent(dataSource[indexPath.section][indexPath.row], gender: indexPath.section, sender: self)
-        }
+        didSelectStudentClosure?(dataSource[indexPath.section][indexPath.row], indexPath.section, self)
+            
+    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return shouldAddSelectButton

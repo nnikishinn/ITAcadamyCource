@@ -7,11 +7,25 @@
 
 import UIKit
 
+struct NotificationObject {
+    let student: String
+    let gender: Int
+    let sender: UIViewController
+    
+    init(student: String, gender: Int, sender: UIViewController) {
+        self.student = student
+        self.gender = gender
+        self.sender = sender
+    }
+}
+
 protocol StudentViewControllerDelegate: AnyObject {
     func didSelectStudent(_ student: String, gender: Int, sender: UIViewController)
 }
 
 class StudentViewController: UIViewController {
+    
+    let studentManager = StudentManager()
     
     private lazy var tableView = UITableView()
     private lazy var selectButton = UIButton(type: .custom)
@@ -23,8 +37,13 @@ class StudentViewController: UIViewController {
     weak var delegate: StudentViewControllerDelegate?
     var didSelectStudentClosure: ((String, Int, UIViewController) -> ())?
 
-    var women: [String] = []
-    var men: [String] = []
+    lazy var women: [String] = {
+        studentManager.readWomenList()
+    }()
+    
+    lazy var men: [String] = {
+        studentManager.readMenList()
+    }()
     
     private var filteredMen: [String] = []
     private var filteredWomen: [String] = []
@@ -45,9 +64,27 @@ class StudentViewController: UIViewController {
         super.viewDidLoad()
         setup()
         reloadFilterData()
+        
+        if shouldAddSelectButton {
+            NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "DidSelectStudentNotification"), object: nil, queue: nil) { [weak self] notification in
+                if let object = notification.object as? NotificationObject {
+                    self?.didSelectStudent(object.student, gender: object.gender, sender: object.sender)
+                }
+            }
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationTriggered), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+    
+    @objc func notificationTriggered() {
+        print("notificationTriggered")
     }
     
     // MARK: - Functions
+    
+    private func saveData() {
+        studentManager.saveData(menList: men, womenList: women)
+    }
     
     private func setup() {
         if shouldAddSearchBar {
@@ -156,9 +193,9 @@ class StudentViewController: UIViewController {
         
        // vc.delegate = self
         
-        vc.didSelectStudentClosure = { [weak self] student, gender, sender in
-            self?.didSelectStudent(student, gender: gender, sender: sender)
-        }
+//        vc.didSelectStudentClosure = { [weak self] student, gender, sender in
+//            self?.didSelectStudent(student, gender: gender, sender: sender)
+//        }
         
         present(vc, animated: true)
     }
@@ -203,6 +240,12 @@ extension StudentViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectStudent(dataSource[indexPath.section][indexPath.row], gender: indexPath.section, sender: self)
         didSelectStudentClosure?(dataSource[indexPath.section][indexPath.row], indexPath.section, self)
+        
+        if !shouldAddSelectButton {
+            let object = NotificationObject(student: dataSource[indexPath.section][indexPath.row], gender: indexPath.section, sender: self)
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DidSelectStudentNotification"), object: object)
+        }
             
     }
     
@@ -231,6 +274,8 @@ extension StudentViewController: UITableViewDelegate {
                 tableView.reloadData()
             })
         }
+        
+        saveData()
     }
 }
 
@@ -269,5 +314,7 @@ extension StudentViewController: StudentViewControllerDelegate {
         }
         
         reloadFilterData()
+        
+        saveData()
     }
 }

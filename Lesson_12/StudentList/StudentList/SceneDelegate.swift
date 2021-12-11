@@ -22,11 +22,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = StudentViewController()
         vc.shouldAddSelectButton = true
         vc.shouldAddSearchBar = true
-        vc.men = []
-        vc.women = []
+//        vc.men = []
+//        vc.women = []
+        
+        print(getDocumentsDirectory())
+       
         
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

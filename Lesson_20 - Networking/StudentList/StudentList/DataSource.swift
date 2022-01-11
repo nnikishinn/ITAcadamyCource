@@ -37,11 +37,17 @@ struct DataSource {
         let url = URL(string: "https://api.github.com/users/\(userName)")
         var request = URLRequest(url: url!)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("token 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", forHTTPHeaderField: "Authorization")
+        request.setValue("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", forHTTPHeaderField: "access_token")
         
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, _) in
-            let decoder = JSONDecoder()
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
+            if let error = error {
+                completionHandler(.failure(error))
+                return
+            }
+            
+            
+            let decoder = JSONDecoder()
             if let data = data {
                 do {
                     print("completed task fetch github user \(userName)")
@@ -50,6 +56,7 @@ struct DataSource {
 
                 } catch {
                     completionHandler(.failure(error))
+                    print("error parsing \(try? JSONSerialization.jsonObject(with: data, options:[]))")
                 }
             }
         }

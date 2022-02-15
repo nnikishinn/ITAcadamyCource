@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46E-1N-MyM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PushExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Bh-B4-96z" userLabel="MainStackView">
-                                        <rect key="frame" x="-59" y="40" width="414" height="365"/>
+                                        <rect key="frame" x="-59" y="40" width="414" height="344.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyR-3N-Ak0" userLabel="SwitchStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
@@ -40,16 +40,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Tfs-6Y-4bg" userLabel="DatePickerStackView">
-                                                <rect key="frame" x="0.0" y="51" width="414" height="91"/>
+                                                <rect key="frame" x="0.0" y="50.999999999999993" width="414" height="70.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTq-0C-cn6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="91"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="70.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Hls-Km-jit">
-                                                        <rect key="frame" x="153.66666666666671" y="0.0" width="260.33333333333326" height="91"/>
+                                                        <rect key="frame" x="153.66666666666671" y="0.0" width="260.33333333333326" height="70.333333333333329"/>
                                                         <connections>
                                                             <action selector="datePickerValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4yo-5m-Km8"/>
                                                         </connections>
@@ -57,7 +57,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fSx-Zr-03Z" userLabel="TitleStackView">
-                                                <rect key="frame" x="0.0" y="162" width="414" height="56"/>
+                                                <rect key="frame" x="0.0" y="141.33333333333334" width="414" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qza-Aw-brV">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
@@ -76,7 +76,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" id="uUX-iw-LCg" userLabel="SubtitleStackView">
-                                                <rect key="frame" x="0.0" y="238" width="414" height="76"/>
+                                                <rect key="frame" x="0.0" y="217.33333333333334" width="414" height="76.000000000000028"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter subtitle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx0-T1-Szx">
@@ -97,7 +97,7 @@
                                                 <viewLayoutGuide key="safeArea" id="jgR-Ri-Tt9"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dle-54-2l4">
-                                                <rect key="frame" x="0.0" y="334" width="414" height="31"/>
+                                                <rect key="frame" x="0.0" y="313.33333333333331" width="414" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Apply"/>
                                                 <connections>
@@ -161,6 +161,7 @@
                             <constraint firstItem="rAA-up-jyt" firstAttribute="top" secondItem="ivt-HW-cNU" secondAttribute="top" id="reX-Y3-5nD"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="UCd-0a-Mil"/>
                     <connections>
                         <outlet property="applyButton" destination="dle-54-2l4" id="cAW-EN-E27"/>
                         <outlet property="containerViewDisabled" destination="rAA-up-jyt" id="Wxd-50-XzU"/>
@@ -176,7 +177,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.086956521739133" y="63.616071428571423"/>
+            <point key="canvasLocation" x="916" y="63.546798029556655"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3yi-Su-oat">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="46E-1N-MyM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nA2-H1-XH4">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NqK-Sn-MqZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUK-xt-kLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="63.546798029556655"/>
         </scene>
     </scenes>
     <resources>

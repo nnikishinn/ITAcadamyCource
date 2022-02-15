@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         updateViewState()
         getNotificationSettingsIfNeeded()
         addObservers()
+        
+        applyButton.setTitle(NSLocalizedString("main_screen.button.apply", comment: ""), for: .normal)
     }
     
     // MARK: Application Lifecycle notifications
@@ -109,6 +111,8 @@ class ViewController: UIViewController {
         case .authorised:
             containerViewRegular.isHidden = false
             containerViewDisabled.isHidden = true
+            notificationsSwitch.isOn = NotificationsManager.shared.isEnabled
+            
         case .denied:
             containerViewRegular.isHidden = true
             containerViewDisabled.isHidden = false
@@ -131,14 +135,44 @@ class ViewController: UIViewController {
     @IBAction func switchValueChanged(_ sender: Any) {
         print("switch is \(notificationsSwitch.isOn)")
         
-        // if switch is off remove pending notifications
+        saveNotificationSettings()
         
+        if notificationsSwitch.isOn {
+            NotificationsManager.shared.recreateNotifications()
+        } else {
+            NotificationsManager.shared.deletePendingNotifications()
+        }
+
         updateViewState()
         getNotificationSettingsIfNeeded()
     }
     
+    private func scheduleNotificationsIfNeeded() {
+        guard let title = titleTextField.text, !title.isEmpty else {
+            titleTextField.shake()
+            return
+        }
+        
+        guard let subtitle = subTitleTextField.text, !subtitle.isEmpty else {
+            subTitleTextField.shake()
+            return
+        }
+        
+        saveNotificationSettings()
+        NotificationsManager.shared.scheduleNotifications()
+    }
+    
+    private func saveNotificationSettings() {
+        NotificationsManager.shared.saveNotificationSettings(title: titleTextField.text, subtitle: subTitleTextField.text, time: datePicker.date, isEnabled: notificationsSwitch.isOn)
+    }
+    
     @IBAction func applyButtonTapped(_ sender: Any) {
-        // schedule notification
+        // check if title and subtitle are entered
+        // save time, title, subtitle
+        // delete pending notifications
+        // schedule new notifications
+       
+        scheduleNotificationsIfNeeded()
         view.endEditing(true)
     }
     
@@ -174,6 +208,16 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         dismissKeyboard()
         return true
+    }
+}
+
+extension UIView {
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
     }
 }
 

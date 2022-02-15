@@ -1,0 +1,9 @@
+/* 
+  Strings.localizable.strings
+  PushExample
+
+  Created by Nickolai Nikishin on 15.02.22.
+  
+*/
+
+"main_screen.button.apply1" = "Apply";

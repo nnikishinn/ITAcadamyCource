@@ -13,6 +13,9 @@
 		D2EA597C27B794E900A33623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EA597A27B794E900A33623 /* Main.storyboard */; };
 		D2EA597E27B794EA00A33623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EA597D27B794EA00A33623 /* Assets.xcassets */; };
 		D2EA598127B794EA00A33623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EA597F27B794EA00A33623 /* LaunchScreen.storyboard */; };
+		D2EA598927BC0BA500A33623 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EA598827BC0BA500A33623 /* NotificationsManager.swift */; };
+		D2EA598D27BC1A7100A33623 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EA598C27BC1A7100A33623 /* SecondViewController.m */; };
+		D2EA599227BC2C4500A33623 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2EA599427BC2C4500A33623 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +23,16 @@
 		D2EA597427B794E900A33623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2EA597627B794E900A33623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2EA597827B794E900A33623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D2EA597B27B794E900A33623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2EA597D27B794EA00A33623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2EA598027B794EA00A33623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2EA598227B794EA00A33623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2EA598827BC0BA500A33623 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		D2EA598A27BC1A7000A33623 /* PushExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2EA598B27BC1A7100A33623 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D2EA598C27BC1A7100A33623 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		D2EA599327BC2C4500A33623 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D2EA599527BC2C4700A33623 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D2EA599627BC2ED400A33623 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2EA599727BC2ED400A33623 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +49,7 @@
 		D2EA596827B794E800A33623 = {
 			isa = PBXGroup;
 			children = (
+				D2EA599427BC2C4500A33623 /* Localizable.strings */,
 				D2EA597327B794E900A33623 /* PushExample */,
 				D2EA597227B794E900A33623 /* Products */,
 			);
@@ -57,12 +67,16 @@
 			isa = PBXGroup;
 			children = (
 				D2EA597427B794E900A33623 /* AppDelegate.swift */,
+				D2EA598827BC0BA500A33623 /* NotificationsManager.swift */,
+				D2EA598B27BC1A7100A33623 /* SecondViewController.h */,
+				D2EA598C27BC1A7100A33623 /* SecondViewController.m */,
 				D2EA597627B794E900A33623 /* SceneDelegate.swift */,
 				D2EA597827B794E900A33623 /* ViewController.swift */,
 				D2EA597A27B794E900A33623 /* Main.storyboard */,
 				D2EA597D27B794EA00A33623 /* Assets.xcassets */,
 				D2EA597F27B794EA00A33623 /* LaunchScreen.storyboard */,
 				D2EA598227B794EA00A33623 /* Info.plist */,
+				D2EA598A27BC1A7000A33623 /* PushExample-Bridging-Header.h */,
 			);
 			path = PushExample;
 			sourceTree = "<group>";
@@ -99,6 +113,7 @@
 				TargetAttributes = {
 					D2EA597027B794E800A33623 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -108,7 +123,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = D2EA596827B794E800A33623;
 			productRefGroup = D2EA597227B794E900A33623 /* Products */;
@@ -126,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2EA598127B794EA00A33623 /* LaunchScreen.storyboard in Resources */,
+				D2EA599227BC2C4500A33623 /* Localizable.strings in Resources */,
 				D2EA597E27B794EA00A33623 /* Assets.xcassets in Resources */,
 				D2EA597C27B794E900A33623 /* Main.storyboard in Resources */,
 			);
@@ -138,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EA598D27BC1A7100A33623 /* SecondViewController.m in Sources */,
 				D2EA597927B794E900A33623 /* ViewController.swift in Sources */,
 				D2EA597527B794E900A33623 /* AppDelegate.swift in Sources */,
+				D2EA598927BC0BA500A33623 /* NotificationsManager.swift in Sources */,
 				D2EA597727B794E900A33623 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +168,7 @@
 		D2EA597A27B794E900A33623 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2EA597B27B794E900A33623 /* Base */,
+				D2EA599627BC2ED400A33623 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -158,9 +176,18 @@
 		D2EA597F27B794EA00A33623 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2EA598027B794EA00A33623 /* Base */,
+				D2EA599727BC2ED400A33623 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D2EA599427BC2C4500A33623 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2EA599327BC2C4500A33623 /* en */,
+				D2EA599527BC2C4700A33623 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +197,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -231,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -287,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -304,6 +334,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.productiveapps.PushExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PushExample/PushExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -314,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -331,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.productiveapps.PushExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PushExample/PushExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

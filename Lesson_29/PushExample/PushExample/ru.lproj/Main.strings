@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Notification time:"; ObjectID = "BTq-0C-cn6"; */
+"BTq-0C-cn6.text" = "Notification time:";
+
+/* Class = "UILabel"; text = "Enter subtitle:"; ObjectID = "Hx0-T1-Szx"; */
+"Hx0-T1-Szx.text" = "Enter subtitle:";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "UCd-0a-Mil"; */
+"UCd-0a-Mil.title" = "Item";
+
+/* Class = "UILabel"; text = "Allow Notifications:"; ObjectID = "YTa-c3-Whf"; */
+"YTa-c3-Whf.text" = "Allow Notifications:";
+
+/* Class = "UIButton"; configuration.title = "Open Settings"; ObjectID = "bHd-it-UqS"; */
+"bHd-it-UqS.configuration.title" = "Open Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bHd-it-UqS"; */
+"bHd-it-UqS.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Apply"; ObjectID = "dle-54-2l4"; */
+"dle-54-2l4.configuration.title" = "Apply";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dle-54-2l4"; */
+"dle-54-2l4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Enter title:"; ObjectID = "qza-Aw-brV"; */
+"qza-Aw-brV.text" = "Enter title:";
+
+/* Class = "UILabel"; text = "Notifications are disabled. please enable them in settings"; ObjectID = "uR9-Ll-Ue9"; */
+"uR9-Ll-Ue9.text" = "Notifications are disabled. please enable them in settings";

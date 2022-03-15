@@ -28,6 +28,8 @@ enum CalcButton: String {
     case precent = "%"
     case negative = "±"
     
+    
+    
     var buttonColor: Color {
         switch self {
         case .add, .subtract, .mutlipy, .divide, .equal:
